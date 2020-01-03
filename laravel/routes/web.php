@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get(
+    '/',
+    'ControllerFluencia@index'
+);
+
+Route::post(
+    '/calcular',
+    'ControllerFluencia@calcular'
+);
