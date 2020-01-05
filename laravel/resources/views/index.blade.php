@@ -5,9 +5,7 @@
 @section('body')
     <div class="jumbotron bg-light border border-secondary">
         <form>
-            <button type="submit"
-                    class="btn btn-primary">Calcular
-            </button>
+            <a href="/calcular">Calcular</a>
         </form>
     </div>
 @endsection

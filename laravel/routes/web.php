@@ -16,7 +16,7 @@ Route::get(
     'ControllerFluencia@index'
 );
 
-Route::post(
+Route::get(
     '/calcular',
     'ControllerFluencia@calcular'
 );

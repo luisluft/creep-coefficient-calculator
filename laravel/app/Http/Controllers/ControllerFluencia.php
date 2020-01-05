@@ -16,7 +16,9 @@ class ControllerFluencia extends Controller
     public function calcular()
     {
         // Calcula Fluencia
+        $fluencia = HelperFluencia::fluencia();
         
+        return $fluencia;
         // Carrega resultados pro usuário
         
     }
