@@ -10,22 +10,22 @@ class HelperFluencia
      * aolongo do cálculo continue 777sigifica que elas possuem algum err pois     * não mudaram d valor inicial
      */
     
-    public static function fluencia()
+    public static function fluencia(array $creepData)
     {
         // Parâmetros que virão como input do ControllerFluenciaL
-        $h      = 0.50;                        # espessura fictícia (m)
-        $t      = 7;                           # idade total (dias)
-        $T      = 30;                          # temperatura ambiente (ºC)
-        $t0     = 4;                           # idade do carregamento inicial (dias)
-        $CP     = 4;                           # tipo de cimento (I, II, III, IV)
-        $fck    = 50;                          # resistência do concreto (MPa)
-        $fct    = 20;                          # resistência do concreto na idade considerada entre 7 e 28 dias (MPa)
-        $ab     = 5;                           # abatimento do concreto (cm)
-        $U      = 70;                          # umidade do ambiente (%)
-        $Ac     = 150;                         # área de seção transversal do concreto (cm²)
-        $uar    = 50;                          # perímetro de concreto em contato com o ar (cm)
-        $ag     = 'diabasio';                  # agregado utilizado na mistura
-        $sigmaC = 30;                          # tensão devido ao carregamento (MPa)
+        $h      = $creepData['espessura_ficticia'];                        # espessura fictícia (m)
+        $t      = 7;                                                       # idade total (dias)
+        $T      = 30;                                                      # temperatura ambiente (ºC)
+        $t0     = 4;                                                       # idade do carregamento inicial (dias)
+        $CP     = 4;                                                       # tipo de cimento (I, II, III, IV)
+        $fck    = 50;                                                      # resistência do concreto (MPa)
+        $fct    = 20;                                                      # resistência do concreto na idade considerada entre 7 e 28 dias (MPa)
+        $ab     = 5;                                                       # abatimento do concreto (cm)
+        $U      = 70;                                                      # umidade do ambiente (%)
+        $Ac     = 150;                                                     # área de seção transversal do concreto (cm²)
+        $uar    = 50;                                                      # perímetro de concreto em contato com o ar (cm)
+        $ag     = 'diabasio';                                              # agregado utilizado na mistura
+        $sigmaC = 30;                                                      # tensão devido ao carregamento (MPa)
         
         // Coeficiente da velocidade de endurecimento do concreto
         $alfa = self::velocidadeEndurecimentoConcreto($CP);

@@ -25,6 +25,7 @@
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/jakub-onderka/php-console-highlighter" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/laravel/framework" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/laravel/tinker" />
+      <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/laravel/ui" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/league/flysystem" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/mockery/mockery" />
       <excludeFolder url="file://$MODULE_DIR$/laravel/vendor/monolog/monolog" />

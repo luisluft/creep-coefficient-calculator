@@ -8,18 +8,27 @@ use Illuminate\Http\Request;
 
 class ControllerFluencia extends Controller
 {
-    public function index()
+    public function formulario()
     {
-        return view('index');
+        return view('form');
     }
     
-    public function calcular()
+    public function calcular(Request $request)
     {
-        // Calcula Fluencia
-        $fluencia = HelperFluencia::fluencia();
+        // Recebe os dados do usuário
+        $creepData                       = [];
+        $creepData['espessura_ficticia'] = $request->input('espessura_ficticia');
         
-        return $fluencia;
+        // Envia dados pro cálculo
+        $fluencia = HelperFluencia::fluencia($creepData);
+        
         // Carrega resultados pro usuário
+        return view('results', compact('fluencia'));
         
+    }
+    
+    public function resultado()
+    {
+        return view('index');
     }
 }

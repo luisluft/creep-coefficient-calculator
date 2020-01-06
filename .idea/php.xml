@@ -88,6 +88,7 @@
       <path value="$PROJECT_DIR$/laravel/vendor/league/flysystem" />
       <path value="$PROJECT_DIR$/laravel/vendor/psr/container" />
       <path value="$PROJECT_DIR$/laravel/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="PhpInterpreters">

@@ -13,10 +13,15 @@
 
 Route::get(
     '/',
-    'ControllerFluencia@index'
+    'ControllerFluencia@formulario'
+);
+
+Route::post(
+    '/resultado',
+    'ControllerFluencia@calcular'
 );
 
 Route::get(
-    '/calcular',
-    'ControllerFluencia@calcular'
+    '/resultado',
+    'ControllerFluencia@resultado'
 );
