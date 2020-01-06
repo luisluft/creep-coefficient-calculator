@@ -28,3 +28,10 @@ body
     background-color: #333;
     color: #fff;
 }
+
+.input-group-addon
+{
+    min-width: 1000px;
+/ / You can adapt this background-color: yellow;
+    text-align: left;
+}
