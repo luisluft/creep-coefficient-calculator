@@ -5,6 +5,12 @@ body
     color: #000000;
 }
 
+.btn
+{
+    background-color: #474e5d;
+    color: #ffffff;
+}
+
 .navbar
 {
     margin-bottom: 10px;
@@ -13,7 +19,7 @@ body
 /* Third container*/
 .bg-3
 {
-    background-color: #474e5d; /* Dark Blue */
+    background-color: #474e5d;
     color: #ffffff;
 }
 

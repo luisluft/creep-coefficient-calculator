@@ -126,3 +126,8 @@ fabric.properties
 .idea/**/markdown-navigator/
 
 # End of https://www.gitignore.io/api/linux,laravel,phpstorm
+
+### Manually Added ###
+
+# xDebug #
+xdebug.log

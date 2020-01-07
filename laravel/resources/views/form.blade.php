@@ -511,7 +511,7 @@
       </div>
       <button
         type="submit"
-        class="btn btn-primary">Calcular
+        class="btn btn-outline-light btn-lg">Calcular
       </button>
     </div>
   </form>
