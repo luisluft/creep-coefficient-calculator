@@ -5,45 +5,11 @@
 @section('body')
   <form
     action="/resultado"
-    method="post">
+    method="post"
+    class="needs-validation">
     @csrf
     <div class="container">
       <div name="content">
-        {{-- Começo do parâmetro--}}
-        <div class="input-group mb-1">
-          <div class="input-group-prepend">
-            <span
-              name="description"
-              class="input-group-text"> Espessura fictícia da Peça
-            </span>
-            <span
-              name="symbol"
-              class="input-group-text">h
-            </span>
-          </div>
-          <input
-            name="h"
-            type="text"
-            class="form-control {{!$errors->any() ? '' : ($errors->has('h') ? 'is-invalid' : 'is-valid' )}}"
-            value="{{old('h')}}">
-          <div class="input-group-append">
-            <span
-              name="units"
-              class="input-group-text">(m)
-            </span>
-            <span
-              name="info"
-              class="input-group-text"><a
-                tabindex="-1"
-                href="#"
-                class="badge
-            badge-info">?</a></span>
-          </div>
-          @error('h')
-          <div class="invalid-feedback">{{ $message }}</div>
-          @enderror
-        </div>
-        {{-- Fim do parâmetro--}}
         {{-- Começo do parâmetro--}}
         <div class="input-group mb-1">
           <div class="input-group-prepend">
@@ -67,12 +33,16 @@
               class="input-group-text">(ºC)
             </span>
             <span
-              name="info"
-              class="input-group-text"><a
+              id="info-temperatura-ambiente"
+              class="input-group-text">
+              <a
+                class="badge badge-info"
                 tabindex="-1"
-                href="#"
-                class="badge
-            badge-info">?</a></span>
+                href="#info-temperatura-ambiente"
+                data-toggle="tooltip"
+                title="0ºC a 40ºC">?
+              </a>
+            </span>
           </div>
           @error('T')
           <div class="invalid-feedback">{{ $message }}</div>
@@ -102,12 +72,16 @@
               class="input-group-text">(%)
             </span>
             <span
-              name="info"
-              class="input-group-text"><a
+              id="info-umidade-ambiente"
+              class="input-group-text">
+              <a
+                class="badge badge-info"
                 tabindex="-1"
-                href="#"
-                class="badge
-            badge-info">?</a></span>
+                href="#info-umidade-ambiente"
+                data-toggle="tooltip"
+                title="40% a 90%">?
+              </a>
+            </span>
           </div>
           @error('U')
           <div class="invalid-feedback">{{ $message }}</div>
@@ -137,12 +111,16 @@
               class="input-group-text">(MPa)
             </span>
             <span
-              name="info"
-              class="input-group-text"><a
+              id="info-tensao-carregamento"
+              class="input-group-text">
+              <a
+                class="badge badge-info"
                 tabindex="-1"
-                href="#"
-                class="badge
-            badge-info">?</a></span>
+                href="#info-tensao-carregamento"
+                data-toggle="tooltip"
+                title="Hooray!">?
+              </a>
+            </span>
           </div>
           @error('sigmaC')
           <div class="invalid-feedback">{{ $message }}</div>
@@ -172,12 +150,16 @@
               class="input-group-text">(dias)
             </span>
             <span
-              name="info"
-              class="input-group-text"><a
+              id="info-tempo-zero"
+              class="input-group-text">
+              <a
+                class="badge badge-info"
                 tabindex="-1"
-                href="#"
-                class="badge
-            badge-info">?</a></span>
+                href="#info-tempo-zero"
+                data-toggle="tooltip"
+                title="Hooray!">?
+              </a>
+            </span>
           </div>
           @error('t0')
           <div class="invalid-feedback">{{ $message }}</div>
@@ -189,32 +171,68 @@
           <div class="input-group-prepend">
             <span
               name="description"
-              class="input-group-text">Idade para cálculo da fluência
+              class="input-group-text">Módulo de elasticidade inicial
             </span>
             <span
               name="symbol"
-              class="input-group-text">t
+              class="input-group-text">Eci
             </span>
           </div>
           <input
-            name="t"
+            name="eci"
             type="text"
-            class="form-control {{!$errors->any() ? '' : ($errors->has('t') ? 'is-invalid' :'is-valid' )}}"
-            value="{{old('t')}}">
+            class="form-control {{!$errors->any() ? '' : ($errors->has('eci') ? 'is-invalid' :'is-valid' )}}"
+            value="{{old('eci')}}">
           <div class="input-group-append">
             <span
               name="units"
-              class="input-group-text">(dias)
+              class="input-group-text">(MPa)
             </span>
             <span
-              name="info"
-              class="input-group-text"><a
+              id="info-tensao-carregamento"
+              class="input-group-text">
+              <a
+                class="badge badge-info"
                 tabindex="-1"
-                href="#"
-                class="badge
-            badge-info">?</a></span>
+                href="#info-tensao-carregamento"
+                data-toggle="tooltip"
+                title="Substitui tipo de agregado e resistência a tração">?
+              </a>
+            </span>
           </div>
-          @error('t')
+          @error('eci')
+          <div class="invalid-feedback">{{ $message }}</div>
+          @enderror
+        </div>
+        {{-- Fim do parâmetro--}}
+        {{-- Começo do parâmetro--}}
+        <div class="input-group mb-1">
+          <div class="input-group-prepend">
+            <label class="input-group-text">Tipo de cimento</label>
+          </div>
+          <select
+            name="CP"
+            class="custom-select {{!$errors->any() ? '' : ($errors->has('CP')?'is-invalid':'is-valid' )}}"> value="{{old('CP')}}">
+            <option disabled>Escolha...</option>
+            <option value="1">CP I</option>
+            <option value="2">CP II</option>
+            <option value="3">CP III</option>
+            <option value="4">CP IV</option>
+          </select>
+          <div class="input-group-append">
+            <span
+              id="info-cimento"
+              class="input-group-text">
+              <a
+                class="badge badge-info"
+                tabindex="-1"
+                href="#info-cimento"
+                data-toggle="tooltip"
+                title="Hooray!">?
+              </a>
+            </span>
+          </div>
+          @error('CP')
           <div class="invalid-feedback">{{ $message }}</div>
           @enderror
         </div>
@@ -240,12 +258,16 @@
           </select>
           <div class="input-group-append">
             <span
-              name="info"
-              class="input-group-text"><a
+              id="info-agregado"
+              class="input-group-text">
+              <a
+                class="badge badge-info"
                 tabindex="-1"
-                href="#"
-                class="badge
-            badge-info">?</a></span>
+                href="#info-agregado"
+                data-toggle="tooltip"
+                title="Hooray!">?
+              </a>
+            </span>
           </div>
           @error('ag')
           <div class="invalid-feedback">{{ $message }}</div>
@@ -255,27 +277,38 @@
         {{-- Começo do parâmetro--}}
         <div class="input-group mb-1">
           <div class="input-group-prepend">
-            <label class="input-group-text">Tipo de cimento</label>
+            <span
+              name="description"
+              class="input-group-text">Resistência a tração
+            </span>
+            <span
+              name="symbol"
+              class="input-group-text">fct
+            </span>
           </div>
-          <select
-            name="CP"
-            class="custom-select {{!$errors->any() ? '' : ($errors->has('CP')?'is-invalid':'is-valid' )}}"> value="{{old('CP')}}">
-            <option disabled>Escolha...</option>
-            <option value="1">CP I</option>
-            <option value="2">CP II</option>
-            <option value="3">CP III</option>
-            <option value="4">CP IV</option>
-          </select>
+          <input
+            name="fct"
+            type="text"
+            class="form-control {{!$errors->any() ? '' : ($errors->has('fct') ? 'is-invalid' : 'is-valid' )}}"
+            value="{{old('fct')}}">
           <div class="input-group-append">
             <span
-              name="info"
-              class="input-group-text"><a
+              name="units"
+              class="input-group-text">(MPa)
+            </span>
+            <span
+              id="info-resistencia-t"
+              class="input-group-text">
+              <a
+                class="badge badge-info"
                 tabindex="-1"
-                href="#"
-                class="badge
-            badge-info">?</a></span>
+                href="#info-resistencia-t"
+                data-toggle="tooltip"
+                title="Hooray!">?
+              </a>
+            </span>
           </div>
-          @error('CP')
+          @error('fct')
           <div class="invalid-feedback">{{ $message }}</div>
           @enderror
         </div>
@@ -303,49 +336,18 @@
               class="input-group-text">(MPa)
             </span>
             <span
-              name="info"
-              class="input-group-text"><a
+              id="info-resistencia"
+              class="input-group-text">
+              <a
+                class="badge badge-info"
                 tabindex="-1"
-                href="#"
-                class="badge
-            badge-info">?</a></span>
+                href="#info-resistencia"
+                data-toggle="tooltip"
+                title="Hooray!">?
+              </a>
+            </span>
           </div>
           @error('fck')
-          <div class="invalid-feedback">{{ $message }}</div>
-          @enderror
-        </div>
-        {{-- Fim do parâmetro--}}
-        {{-- Começo do parâmetro--}}
-        <div class="input-group mb-1">
-          <div class="input-group-prepend">
-            <span
-              name="description"
-              class="input-group-text">Resistência do concreto na idade considerada
-            </span>
-            <span
-              name="symbol"
-              class="input-group-text">fct
-            </span>
-          </div>
-          <input
-            name="fct"
-            type="text"
-            class="form-control {{!$errors->any() ? '' : ($errors->has('fct') ? 'is-invalid' : 'is-valid' )}}"
-            value="{{old('fct')}}">
-          <div class="input-group-append">
-            <span
-              name="units"
-              class="input-group-text">(MPa)
-            </span>
-            <span
-              name="info"
-              class="input-group-text"><a
-                tabindex="-1"
-                href="#"
-                class="badge
-            badge-info">?</a></span>
-          </div>
-          @error('fct')
           <div class="invalid-feedback">{{ $message }}</div>
           @enderror
         </div>
@@ -373,12 +375,16 @@
               class="input-group-text">(cm)
             </span>
             <span
-              name="info"
-              class="input-group-text"><a
+              id="info-abatimento"
+              class="input-group-text">
+              <a
+                class="badge badge-info"
                 tabindex="-1"
-                href="#"
-                class="badge
-            badge-info">?</a></span>
+                href="#info-abatimento"
+                data-toggle="tooltip"
+                title="Hooray!">?
+              </a>
+            </span>
           </div>
           @error('ab')
           <div class="invalid-feedback">{{ $message }}</div>
@@ -408,12 +414,16 @@
               class="input-group-text">(cm²)
             </span>
             <span
-              name="info"
-              class="input-group-text"><a
+              id="info-area"
+              class="input-group-text">
+              <a
+                class="badge badge-info"
                 tabindex="-1"
-                href="#"
-                class="badge
-            badge-info">?</a></span>
+                href="#info-area"
+                data-toggle="tooltip"
+                title="Hooray!">?
+              </a>
+            </span>
           </div>
           @error('Ac')
           <div class="invalid-feedback">{{ $message }}</div>
@@ -425,7 +435,7 @@
           <div class="input-group-prepend">
             <span
               name="description"
-              class="input-group-text">Perímetro da peça em contato com o ar
+              class="input-group-text">Perímetro em contato com o ar
             </span>
             <span
               name="symbol"
@@ -443,14 +453,57 @@
               class="input-group-text">(cm)
             </span>
             <span
-              name="info"
-              class="input-group-text"><a
+              id="info-perimetro"
+              class="input-group-text">
+              <a
+                class="badge badge-info"
                 tabindex="-1"
-                href="#"
-                class="badge
-            badge-info">?</a></span>
+                href="#info-perimetro"
+                data-toggle="tooltip"
+                title="Hooray!">?
+              </a>
+            </span>
           </div>
           @error('uar')
+          <div class="invalid-feedback">{{ $message }}</div>
+          @enderror
+        </div>
+        {{-- Fim do parâmetro--}}
+        {{-- Começo do parâmetro--}}
+        <div class="input-group mb-1">
+          <div class="input-group-prepend">
+            <span
+              name="description"
+              class="input-group-text">Idade para cálculo da fluência
+            </span>
+            <span
+              name="symbol"
+              class="input-group-text">t
+            </span>
+          </div>
+          <input
+            name="t"
+            type="text"
+            class="form-control {{!$errors->any() ? '' : ($errors->has('t') ? 'is-invalid' :'is-valid' )}}"
+            value="{{old('t')}}">
+          <div class="input-group-append">
+            <span
+              name="units"
+              class="input-group-text">(dias)
+            </span>
+            <span
+              id="info-tempo"
+              class="input-group-text">
+              <a
+                class="badge badge-info"
+                tabindex="-1"
+                href="#info-tempo"
+                data-toggle="tooltip"
+                title="Hooray!">?
+              </a>
+            </span>
+          </div>
+          @error('t')
           <div class="invalid-feedback">{{ $message }}</div>
           @enderror
         </div>
@@ -462,4 +515,12 @@
       </button>
     </div>
   </form>
+@endsection
+
+@section('javascript')
+  <script>
+  $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+  });
+  </script>
 @endsection

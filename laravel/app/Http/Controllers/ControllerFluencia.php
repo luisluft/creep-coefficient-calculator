@@ -32,6 +32,7 @@ class ControllerFluencia extends Controller
         $creepData['ab']     = $request->input('ab');
         $creepData['Ac']     = $request->input('Ac');
         $creepData['uar']    = $request->input('uar');
+        $creepData['eci']    = $request->input('eci');
 
         // Envia dados pro cálculo
         $fluencia = HelperFluencia::fluencia($creepData);

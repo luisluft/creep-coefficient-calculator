@@ -13,19 +13,20 @@ class HelperFluencia
     public static function fluencia(array $creepData)
     {
         // Parâmetros que virão como input do ControllerFluencia
-        $h      = $creepData['h'];                    # espessura fictícia (m) - 0.5
-        $T      = $creepData['T'];                    # temperatura ambiente (ºC) - 30
-        $U      = $creepData['U'];                    # umidade do ambiente (%) - 70
-        $sigmaC = $creepData['sigmaC'];               # tensão devido ao carregamento (MPa) - 30
-        $t0     = $creepData['t0'];                   # idade do carregamento inicial (dias) - 4
-        $t      = $creepData['t'];                    # idade total (dias) - 7
-        $ag     = $creepData['ag'];                   # agregado utilizado na mistura - diabasio
-        $CP     = $creepData['CP'];                   # tipo de cimento (I, II, III, IV) - 4
-        $fck    = $creepData['fck'];                  # resistência do concreto (MPa) - 50
-        $fct    = $creepData['fct'];                  # resistência do concreto na idade considerada entre 7 e 28 dias (MPa) - 20
-        $ab     = $creepData['ab'];                   # abatimento do concreto (cm) - 5
-        $Ac     = $creepData['Ac'];                   # área de seção transversal do concreto (cm²) - 150
-        $uar    = $creepData['uar'];                  # perímetro de concreto em contato com o ar (cm) - 50
+        // O resultado esperado para os valores exemplo é de 0.002236
+        $T      = $creepData['T'];                    # 20      = temperatura ambiente (ºC)
+        $U      = $creepData['U'];                    # 50      = umidade do ambiente (%)
+        $sigmaC = $creepData['sigmaC'];               # 23.66   = tensão devido ao carregamento (MPa)
+        $t0     = $creepData['t0'];                   # 29      = idade do carregamento inicial (dias)
+        $t      = $creepData['t'];                    # 728     = idade total (dias)
+        $ag     = $creepData['ag'];                   # gnaisse = agregado utilizado na mistura
+        $CP     = $creepData['CP'];                   # IV      = tipo de cimento (I, II, III, IV)
+        $fck    = $creepData['fck'];                  # 24      = resistência do concreto (MPa)
+        $fct    = $creepData['fct'];                  # 2.93    = resistência a tração na idade considerada entre 7 e 28 dias (MPa)
+        $ab     = $creepData['ab'];                   # 8       = abatimento do concreto (cm)
+        $Ac     = $creepData['Ac'];                   # 83.44   = área de seção transversal do concreto (cm²)
+        $uar    = $creepData['uar'];                  # 37.14   = perímetro de concreto em contato com o ar (cm)
+        $eci    = $creepData['eci'];                  # 27490   = módulo de elasticidade inicial (MPa)
 
         // Coeficiente da velocidade de endurecimento do concreto
         $alfa = self::velocidadeEndurecimentoConcreto($CP);
@@ -38,6 +39,23 @@ class HelperFluencia
 
         // Idade fictícia do carregamento (dias)
         $t0fic = $alfa * (($T + 10) / 30) * $t0;
+
+        // Espessura fictícia
+        $gamma = 1 + exp(-7.8 + 0.1 * $U);
+        // Cálculo de hfic
+        if ($uar == 0) {
+            $hfic = $gamma * 2 * $Ac / 0.01;    // pra não dividir por 0
+        } else {
+            $hfic = $gamma * 2 * $Ac / $uar;    // valor normal
+        }
+        // Limitação de h segundo a norma
+        if ($hfic < 0.05) {
+            $h = 0.05;
+        } elseif ($hfic > 1.6) {
+            $h = 1.6;
+        } else {
+            $h = $hfic;
+        }
 
         // Polinômio da norma
         $A = 42 * $h ** 3 - 350 * $h ** 2 + 588 * $h + 113;
@@ -67,16 +85,6 @@ class HelperFluencia
             $phiA = 1.4 * (1 - $beta1);
         }
 
-        // Espessura fictícia
-        $gamma = 1 + exp(-7.8 + 0.1 * $U);
-
-        // Limitando o valor de 2 Ac/uar segundo a tabela da NBR6118:2014
-        if ($uar == 0) {
-            $hfic = 60;
-        } else {
-            $hfic = $gamma * 2 * $Ac / $uar;
-        }
-
 
         // Coeficiente de fluência lenta irreversível
         $phiFinf = self::coeficienteFluenciaLentaIrreversivel(
@@ -90,16 +98,20 @@ class HelperFluencia
         $phiDinf = 0.4;
         $phi     = $phiA + $phiFinf * ($betaft - $betaft0) + $phiDinf + $betad;
 
-        // Coeficiente de agregados
-        $sigmaE = self::coeficienteAgregado($ag);
+        // Coeficiente de agregados calculado somente se eci não é fornecido
+        if (!isset($eci)) {
+            $sigmaE = self::coeficienteAgregado($ag);
+        }
 
-        // Módulo de elasticidade inicial (MPa)
-        $eci = self::moduloElasticidadeInicial(
-            $fck,
-            $t,
-            $sigmaE,
-            $fct
-        );
+        // Módulo de elasticidade inicial (MPa) calculado somente se eci não é fornecido
+        if (!isset($eci)) {
+            $eci = self::moduloElasticidadeInicial(
+                $fck,
+                $t,
+                $sigmaE,
+                $fct
+            );
+        }
 
         // Deformação por fluência
         return $sigmaC * $phi / $eci;
@@ -190,13 +202,13 @@ class HelperFluencia
      */
     protected static function coeficienteAgregado(string $ag)
     {
-        $sigmaE = 777;
-
         switch ($ag) {
             case 'diabasio':
+            case 'basalto':
                 $sigmaE = 1.2;
                 break;
             case 'granito':
+            case 'gnaisse':
                 $sigmaE = 1;
                 break;
             case 'calcario':

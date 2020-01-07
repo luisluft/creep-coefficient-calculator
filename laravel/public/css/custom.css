@@ -5,11 +5,6 @@ body
     color: #000000;
 }
 
-.parameters
-{
-    display: table;
-}
-
 .navbar
 {
     margin-bottom: 10px;
@@ -29,9 +24,7 @@ body
     color: #fff;
 }
 
-.input-group-addon
+input
 {
-    min-width: 1000px;
-/ / You can adapt this background-color: yellow;
-    text-align: left;
+    text-align: right;
 }
