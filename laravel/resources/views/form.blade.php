@@ -97,7 +97,7 @@
             </span>
             <span
               name="symbol"
-              class="input-group-text">sigmaC
+              class="input-group-text">σc
             </span>
           </div>
           <input
@@ -118,7 +118,7 @@
                 tabindex="-1"
                 href="#info-tensao-carregamento"
                 data-toggle="tooltip"
-                title="Hooray!">?
+                title="Tensão constante aplicada a peça durante o período apurado">?
               </a>
             </span>
           </div>
@@ -136,7 +136,7 @@
             </span>
             <span
               name="symbol"
-              class="input-group-text">t0
+              class="input-group-text">t<sub>0</sub>
             </span>
           </div>
           <input
@@ -157,7 +157,7 @@
                 tabindex="-1"
                 href="#info-tempo-zero"
                 data-toggle="tooltip"
-                title="Hooray!">?
+                title="Momento em que começa o carregamento (normalmente retirada de escoramento)">?
               </a>
             </span>
           </div>
@@ -175,7 +175,7 @@
             </span>
             <span
               name="symbol"
-              class="input-group-text">Eci
+              class="input-group-text">E<sub>ci</sub>
             </span>
           </div>
           <input
@@ -196,7 +196,7 @@
                 tabindex="-1"
                 href="#info-tensao-carregamento"
                 data-toggle="tooltip"
-                title="Substitui tipo de agregado e resistência a tração">?
+                title="Substitui tipo de agregado e resistência a tração nos cálculos">?
               </a>
             </span>
           </div>
@@ -228,7 +228,7 @@
                 tabindex="-1"
                 href="#info-cimento"
                 data-toggle="tooltip"
-                title="Hooray!">?
+                title="Qualidade do cimento Portland">?
               </a>
             </span>
           </div>
@@ -265,7 +265,7 @@
                 tabindex="-1"
                 href="#info-agregado"
                 data-toggle="tooltip"
-                title="Hooray!">?
+                title="Utilizado para calcular módulo de elasticidade inicial.">?
               </a>
             </span>
           </div>
@@ -283,7 +283,7 @@
             </span>
             <span
               name="symbol"
-              class="input-group-text">fct
+              class="input-group-text">f<sub>ct</sub>
             </span>
           </div>
           <input
@@ -304,7 +304,7 @@
                 tabindex="-1"
                 href="#info-resistencia-t"
                 data-toggle="tooltip"
-                title="Hooray!">?
+                title="Utilizado para calcular módulo de elasticidade inicial.">?
               </a>
             </span>
           </div>
@@ -322,7 +322,7 @@
             </span>
             <span
               name="symbol"
-              class="input-group-text">fck
+              class="input-group-text">f<sub>ck</sub>
             </span>
           </div>
           <input
@@ -343,7 +343,7 @@
                 tabindex="-1"
                 href="#info-resistencia"
                 data-toggle="tooltip"
-                title="Hooray!">?
+                title="20MPa a 90MPa">?
               </a>
             </span>
           </div>
@@ -382,7 +382,7 @@
                 tabindex="-1"
                 href="#info-abatimento"
                 data-toggle="tooltip"
-                title="Hooray!">?
+                title="Resistência característica do concreto obtida por ensaios da norma NBR NM 67.">?
               </a>
             </span>
           </div>
@@ -421,7 +421,7 @@
                 tabindex="-1"
                 href="#info-area"
                 data-toggle="tooltip"
-                title="Hooray!">?
+                title="Área da seção transversal da peça.">?
               </a>
             </span>
           </div>
@@ -439,7 +439,7 @@
             </span>
             <span
               name="symbol"
-              class="input-group-text">uar
+              class="input-group-text">u<sub>ar</sub>
             </span>
           </div>
           <input
@@ -460,7 +460,7 @@
                 tabindex="-1"
                 href="#info-perimetro"
                 data-toggle="tooltip"
-                title="Hooray!">?
+                title="Perímetro da seção em contato com a atmosfera.">?
               </a>
             </span>
           </div>
@@ -499,7 +499,7 @@
                 tabindex="-1"
                 href="#info-tempo"
                 data-toggle="tooltip"
-                title="Hooray!">?
+                title=" Mínimo 7 dias - tempo para o cálculo da fluênca.">?
               </a>
             </span>
           </div>
