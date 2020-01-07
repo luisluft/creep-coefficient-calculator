@@ -69,7 +69,14 @@ class HelperFluencia
 
         // Espessura fictícia
         $gamma = 1 + exp(-7.8 + 0.1 * $U);
-        $hfic  = $gamma * 2 * $Ac / $uar;
+
+        // Limitando o valor de 2 Ac/uar segundo a tabela da NBR6118:2014
+        if ($uar == 0) {
+            $hfic = 60;
+        } else {
+            $hfic = $gamma * 2 * $Ac / $uar;
+        }
+
 
         // Coeficiente de fluência lenta irreversível
         $phiFinf = self::coeficienteFluenciaLentaIrreversivel(

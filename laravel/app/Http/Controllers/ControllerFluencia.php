@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cliente;
 use App\Helpers\HelperFluencia;
+use App\Http\Requests\FluenciaFormValidation;
 use Illuminate\Http\Request;
 
 class ControllerFluencia extends Controller
@@ -13,9 +14,10 @@ class ControllerFluencia extends Controller
         return view('form');
     }
 
-    public function calcular(Request $request)
+    public function calcular(FluenciaFormValidation $request)
     {
-        // Recebe os dados do usuário
+        // Dados foram validados pelo FluenciaFormValidation
+        // Armazena os dados do formulário em um array
         $creepData           = [];
         $creepData['h']      = $request->input('h');
         $creepData['t']      = $request->input('t');
@@ -34,7 +36,7 @@ class ControllerFluencia extends Controller
         // Envia dados pro cálculo
         $fluencia = HelperFluencia::fluencia($creepData);
 
-        // Carrega resultados pro usuário
+        // Carrega resultado pro usuário
         return view(
             'results',
             compact('fluencia')
