@@ -17,11 +17,7 @@ Route::get(
 );
 
 Route::post(
-    '/resultado',
+    '/calcular',
     'ControllerFluencia@calcular'
 );
 
-Route::get(
-    '/resultado',
-    'ControllerFluencia@resultado'
-);

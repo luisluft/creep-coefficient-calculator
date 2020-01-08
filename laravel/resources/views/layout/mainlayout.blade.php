@@ -23,9 +23,6 @@
     <script
       src="{{asset('js/app.js')}}"
       type="application/javascript"></script>
-    @hasSection('results')
-      @yield('results')
-    @endif
     @hasSection('javascript')
       @yield('javascript')
     @endif

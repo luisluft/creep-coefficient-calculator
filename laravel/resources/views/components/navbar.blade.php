@@ -5,8 +5,8 @@
 
   <div class="collapse navbar-collapse" id="navbar">
     <ul class="navbar-nav mr-auto">
-      <li @if($current=='home') class="nav-item active" @else class="nav-item" @endif>
-        <a class="nav-link" href="/">Formulário </a>
+      <li @if($current=='Fluência') class="nav-item active" @else class="nav-item" @endif>
+        <a class="nav-link" href="/">Fluência</a>
       </li>
       <li @if($current=='produtos') class="nav-item active" @else class="nav-item" @endif>
         <a class="nav-link" href="/produtos">Resultados</a>

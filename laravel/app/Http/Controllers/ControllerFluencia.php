@@ -11,9 +11,13 @@ class ControllerFluencia extends Controller
 {
     public function formulario()
     {
-        return view('form');
+        return view('form')->with(
+            'name',
+            'Victoria'
+        );
     }
 
+    // Calcula fluencia e envia a resposta de volta pra quem pediu
     public function calcular(FluenciaFormValidation $request)
     {
         // Dados foram validados pelo FluenciaFormValidation
@@ -38,15 +42,11 @@ class ControllerFluencia extends Controller
         $fluencia = HelperFluencia::fluencia($creepData);
 
         // Carrega resultado pro usuário
-        return view(
-            'results',
-            compact('fluencia')
-        );
-
-    }
-
-    public function resultado()
-    {
-        return view('index');
+        return back()
+            ->withInput()
+            ->with(
+                'fluencia',
+                $fluencia
+            );
     }
 }
