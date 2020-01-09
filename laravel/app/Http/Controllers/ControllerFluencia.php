@@ -18,7 +18,25 @@ class ControllerFluencia extends Controller
     }
 
     // Calcula fluencia e envia a resposta de volta pra quem pediu
-    public function calcular(FluenciaFormValidation $request)
+    public function calculo(FluenciaFormValidation $request)
+    {
+        $fluencia = $this->calculoApi($request);
+
+        // Carrega resultado pro usuário
+        return back()
+            ->withInput()
+            ->with(
+                'fluencia',
+                $fluencia
+            );
+    }
+
+    /**
+     * @param FluenciaFormValidation $request
+     *
+     * @return float|int
+     */
+    public function calculoApi(FluenciaFormValidation $request)
     {
         // Dados foram validados pelo FluenciaFormValidation
         // Armazena os dados do formulário em um array
@@ -40,13 +58,21 @@ class ControllerFluencia extends Controller
 
         // Envia dados pro cálculo
         $fluencia = HelperFluencia::fluencia($creepData);
+        return $fluencia;
+    }
 
-        // Carrega resultado pro usuário
-        return back()
-            ->withInput()
-            ->with(
-                'fluencia',
-                $fluencia
-            );
+    public function teoria()
+    {
+        return view('theory');
+    }
+
+    public function exemplo()
+    {
+        return view('example');
+    }
+
+    public function sobre()
+    {
+        return view('about');
     }
 }

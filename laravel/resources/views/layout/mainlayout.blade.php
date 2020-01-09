@@ -1,4 +1,4 @@
-<html>
+<html lang="PT-BR">
   <head>
     <link
       rel="stylesheet"
@@ -7,6 +7,7 @@
       rel="stylesheet"
       href="{{ asset('css/custom.css')}}">
     <title>@yield('title')</title>
+    <meta charset="UTF-8">
     <meta
       name="csrf-token"
       content="{{csrf_token()}}">
@@ -15,18 +16,20 @@
   <body>
     @component('components.navbar', ['current'=> $current])
     @endcomponent
-    <main role="main">
       @hasSection('body')
         @yield('body')
       @endif
-    </main>
     <script
       src="{{asset('js/app.js')}}"
       type="application/javascript"></script>
     @hasSection('javascript')
       @yield('javascript')
     @endif
+
+    <footer>
+      @component('components.footer')
+      @endcomponent
+    </footer>
+
   </body>
-  @component('components.footer')
-  @endcomponent
 </html>

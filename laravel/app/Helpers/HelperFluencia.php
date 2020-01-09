@@ -113,8 +113,12 @@ class HelperFluencia
             );
         }
 
+        $fluencia = $sigmaC * $phi / $eci;
+
+        $fluenciaFormatada = number_format((float)$fluencia, 8, '.', '');
+
         // Deformação por fluência
-        return $sigmaC * $phi / $eci;
+        return $fluenciaFormatada ;
     }
 
     /**

@@ -12,12 +12,28 @@
 */
 
 Route::get(
-    '/',
+    '/calculo',
     'ControllerFluencia@formulario'
 );
 
-Route::post(
-    '/calcular',
-    'ControllerFluencia@calcular'
+Route::get(
+    '/teoria',
+    'ControllerFluencia@teoria'
 );
+
+Route::get(
+    '/exemplo',
+    'ControllerFluencia@exemplo'
+);
+
+Route::get(
+    '/sobre',
+    'ControllerFluencia@sobre'
+);
+
+Route::post(
+    '/calculo',
+    'ControllerFluencia@calculo'
+);
+
 

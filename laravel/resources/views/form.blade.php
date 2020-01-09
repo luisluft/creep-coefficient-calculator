@@ -1,11 +1,11 @@
-@extends('layout.mainlayout', ['current'=>'Fluência'])
+@extends('layout.mainlayout', ['current'=>'Cálculo'])
 
-@section('title', 'Fluência')
+@section('title', 'Fluência - Cálculo')
 
 @section('body')
   <div class="container">
     <form
-      action="/calcular"
+      action="/calculo"
       method="post"
       id="formFluencia"
       class="needs-validation">
@@ -483,7 +483,7 @@
       </div>
       {{-- Fim do parâmetro--}}
       {{-- Começo do parâmetro--}}
-      <div class="input-group mb-3">
+      <div class="input-group mb-0">
         <div class="input-group-prepend">
           <span
             name="description"
@@ -522,13 +522,15 @@
         @enderror
       </div>
       {{-- Fim do parâmetro--}}
-      <button
-        type="submit"
-        class="btn btn-outline-dark btn-calcular btn-block">Calcular
-      </button>
+      <div class="input-group mb-0">
+        <button
+          type="submit"
+          class="btn btn-outline-info btn-calcular btn-block">Calcular
+        </button>
+      </div>
     </form>
+    {{-- Começo do resultado --}}
     @if (session('fluencia'))
-      {{-- Começo do resultado --}}
       <div class="input-group mb-0">
         <div class="input-group-prepend">
           <span
@@ -553,26 +555,22 @@
             class="input-group-text">(mm/mm)
           </span>
         </div>
-        <div id="T-validation"></div>
-        @error('T')
-        <div class="invalid-feedback">{{ $message }}</div>
-        @enderror
-        {{-- Fim do resultado --}}
-        @endif
       </div>
-      <div class="row">
+    @endif
+    {{-- Fim do resultado --}}
+  </div>
 
-      </div>
-      @endsection
 
-    @section('javascript')
-      <script>
+@endsection
 
-      // Activates the tooltips
-      $(document).ready(function () {
-          $('[data-toggle="tooltip"]').tooltip();
-      });
+@section('javascript')
+  <script>
 
-      </script>
+  // Activates the tooltips
+  $(document).ready(function () {
+      $('[data-toggle="tooltip"]').tooltip();
+  });
+
+  </script>
 
 @endsection
