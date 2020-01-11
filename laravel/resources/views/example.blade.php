@@ -6,12 +6,14 @@
   <div class="container">
 
     <object
-      data="https://github.com/luisluft/fluencia.nbrsimplificada/tree/master/laravel/storage/app/public/exemplo.pdf">
+      data="https://drive.google.com/file/d/1hfJL6fE-bTWhxYoe8cFFe7VGtnvnajHH/preview"
+      type="application/pdf">
       <embed
         src="storage/exemplo.pdf"/>
-      <p>This browser does not support PDFs.
-        Please download the PDF to view it:
-        <a href="https://github.com/luisluft/fluencia.nbrsimplificada/tree/master/laravel/storage/app/public/exemplo.pdf">View the PDF</a>.
+      <p>
+          Este navegador não suporta PDFs.
+          Por favor baixe o PDF pra vizualizá-lo com este link:
+        <a href="https://drive.google.com/file/d/1hfJL6fE-bTWhxYoe8cFFe7VGtnvnajHH/preview">View the PDF</a>.
       </p>
       </embed>
     </object>
