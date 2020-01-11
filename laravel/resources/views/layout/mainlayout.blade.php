@@ -16,9 +16,9 @@
   <body>
     @component('components.navbar', ['current'=> $current])
     @endcomponent
-      @hasSection('body')
-        @yield('body')
-      @endif
+    @hasSection('body')
+      @yield('body')
+    @endif
     <script
       src="{{asset('js/app.js')}}"
       type="application/javascript"></script>

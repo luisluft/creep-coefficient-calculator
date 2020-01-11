@@ -23,6 +23,18 @@ img
     height: auto;
 }
 
+embed
+{
+    width: 100%;
+    height: auto;
+}
+
+object
+{
+    width: 100%;
+    height: auto;
+}
+
 body
 {
     letter-spacing: 0.15em;

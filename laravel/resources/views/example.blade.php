@@ -4,16 +4,16 @@
 
 @section('body')
   <div class="container">
-    <img src="storage/exemplo-de-calculo/1.jpg" alt="exemplo-de-calculo-1" width="200" height="80">
-    <img src="storage/exemplo-de-calculo/2.jpg" alt="exemplo-de-calculo-2" width="200" height="80">
-    <img src="storage/exemplo-de-calculo/3.jpg" alt="exemplo-de-calculo-3" width="200" height="80">
-    <img src="storage/exemplo-de-calculo/4.jpg" alt="exemplo-de-calculo-4" width="200" height="80">
 
+    <object
+      data="https://github.com/luisluft/fluencia.nbrsimplificada/tree/master/laravel/storage/app/public/exemplo.pdf">
+      <embed
+        src="storage/exemplo.pdf"/>
+      <p>This browser does not support PDFs.
+        Please download the PDF to view it:
+        <a href="https://github.com/luisluft/fluencia.nbrsimplificada/tree/master/laravel/storage/app/public/exemplo.pdf">View the PDF</a>.
+      </p>
+      </embed>
+    </object>
   </div>
-
-@endsection
-
-    @section('javascript')
-      <script></script>
-
 @endsection
