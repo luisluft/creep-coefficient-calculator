@@ -17,6 +17,11 @@ Route::get(
 );
 
 Route::get(
+    '/',
+    'ControllerFluencia@formulario'
+);
+
+Route::get(
     '/teoria',
     'ControllerFluencia@teoria'
 );
