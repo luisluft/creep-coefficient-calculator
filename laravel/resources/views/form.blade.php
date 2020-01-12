@@ -7,50 +7,44 @@
     <form
       action="/calculo"
       method="post"
-      id="formFluencia"
-      class="needs-validation">
+      id="formFluencia">
       @csrf
-      {{-- Começo do parâmetro--}}
-      <div class="input-group mb-0">
-        <div class="input-group-prepend">
-          <span
-            name="description"
-            class="input-group-text">Temperatura ambiente
-          </span>
-          <span
-            name="symbol"
-            class="input-group-text">T
-          </span>
+      {{-- Começo do teste--}}
+      <div class="input-group">
+        <div class="title border text-center pt-1 pb-0 bg-dark text-white">
+          <label for="parameter">Temperatura ambiente</label>
         </div>
-        <input
-          name="T"
-          id="T"
-          type="text"
-          class="form-control {{!$errors->any() ? '' : ($errors->has('T') ? 'is-invalid' :'is-valid' )}}"
-          value="{{old('T')}}">
-        <div class="input-group-append">
-          <span
-            name="units"
-            class="input-group-text">(ºC)
-          </span>
-          <span
-            id="info-temperatura-ambiente"
-            class="input-group-text">
-            <a
-              class="badge badge-info"
-              tabindex="-1"
-              href="#info-temperatura-ambiente"
-              data-toggle="tooltip"
-              title="0ºC a 40ºC">?
-            </a>
-          </span>
+        <div class="symbol border text-center pt-1">
+          <label for="parameter">T</label>
         </div>
-        <div id="T-validation"></div>
+        <div class="value border">
+          <input
+            name="T"
+            id="T"
+            type="text"
+            class="form-control {{!$errors->any() ? '' : ($errors->has('T') ? 'is-invalid' :'is-valid' )}}"
+            value="{{old('T')}}">
+        </div>
+        <div class="units border text-center pt-1">
+          <label for="units">(ºC)</label>
+        </div>
+        <div
+          class="info border text-center">
+          <a
+            class="badge badge-pill badge-primary mt-2"
+            tabindex="-1"
+            data-toggle="tooltip"
+            title="0ºC a 40ºC">?
+          </a>
+        </div>
         @error('T')
-        <div class="invalid-feedback">{{ $message }}</div>
+        <div class="invalid-feedback"><i>{{ $message }}</i></div>
         @enderror
       </div>
-      {{-- Fim do parâmetro--}}
+      {{-- Fim do teste--}}
+
+
+
       {{-- Começo do parâmetro--}}
       <div class="input-group mb-0">
         <div class="input-group-prepend">
@@ -566,10 +560,10 @@
 @section('javascript')
   <script>
 
-  // Activates the tooltips
-  $(document).ready(function () {
-      $('[data-toggle="tooltip"]').tooltip();
-  });
+      // Activates the tooltips
+      $(document).ready(function () {
+          $('[data-toggle="tooltip"]').tooltip();
+      });
 
   </script>
 

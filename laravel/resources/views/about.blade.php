@@ -21,20 +21,20 @@
       ou qualquer garantia.
     </p>
   </div>
-  <div class="container-fluid bg-3 text-center">
+  <div class="container-fluid bg text-center">
     <h6>Sobre o autor</h6>
     <!-- Stylized button links-->
     <a
       href="https://www.facebook.com/luis.luft"
-      class="btn btn-linkee btn-default btn">facebook
+      class="btn btn-light">facebook
     </a>
     <a
       href="https://www.instagram.com/luisluft"
-      class="btn btn-linkee btn">instagram
+      class="btn btn-light">instagram
     </a>
     <a
       href="https://github.com/luisluft"
-      class="btn btn-linkee btn-default btn">github
+      class="btn btn-light">github
     </a>
     <br>
   </div>

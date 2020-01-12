@@ -13,7 +13,7 @@
       <p>
           Este navegador não suporta PDFs.
           Por favor baixe o PDF pra vizualizá-lo com este link:
-        <a href="https://drive.google.com/file/d/1hfJL6fE-bTWhxYoe8cFFe7VGtnvnajHH/preview">View the PDF</a>.
+        <a href="https://drive.google.com/file/d/1hfJL6fE-bTWhxYoe8cFFe7VGtnvnajHH/preview">Clique aqui para ver o PDF</a>.
       </p>
       </embed>
     </object>
