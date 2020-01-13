@@ -5,9 +5,9 @@
 @section('body')
   <div class="container">
     <u><h4>Sobre o site</h4></u>
-    <p>O site calcula a deformação por fluência do concreto ε<sub>cc</sub> segundo a norma brasileira NBR 6118:2014.
-      Nos momentos onde é possível utilizar fórmulas no lugar de tabelas isto é feito e nenhuma aproximação foi realizada pelo autor.
-      O roteiro de cálculo e todas as explicações pertinentes sobre os parâmetros estão disponíveis na página 'Teoria' na seção 'Roteiro
+    <p>O site calcula a deformação por fluência do concreto ε<sub>cc</sub> segundo a norma brasileira NBR 6118:2014. Nenhuma aproximação
+      foi realizada pelo autor e  as limitações apresentadas para os parâmetros como 0ºC a 40ºC para temperatura ambiente ou 40% a 90% umidade ambiente são limitações
+      do próprio modelo da norma. O roteiro de cálculo e todas as explicações pertinentes sobre os parâmetros estão disponíveis na página 'Teoria' na seção 'Roteiro
       de cálculo'. Há um exemplo de cálculo realizado com o programa Mathcad Prime 3.0 na página 'Exemplo'.
       O código do site está disponibilizado no <a
         class="btn btn-danger" href="https://github.com/luisluft/fluencia.nbrsimplificada">GitHub</a>.
