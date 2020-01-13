@@ -40,6 +40,7 @@ p
 
 .btn-calcular
 {
+    font-size:1rem;
     background-color: #36486b;
     margin-bottom: 0.1rem;
     margin-top: 0.5rem;
@@ -49,7 +50,7 @@ p
 /* Sobre o autor*/
 .bg
 {
-    padding:0.3rem;
+    padding: 0.3rem;
     color: #ffffff;
     background-color: #343a40;
 }
@@ -118,30 +119,46 @@ input
 {
     .title
     {
-        width:33%;
+        width: 33%;
     }
+
     .symbol
     {
-        width:20%;
+        width: 20%;
     }
+
     .value
     {
-        width:25%;
+        width: 25%;
     }
+
     .value-select
     {
         width: 85%;
     }
+
     .units
     {
-        width:15%;
+        width: 15%;
     }
+
     .info
     {
-        width:7%;
+        width: 7%;
     }
+
     .units-results
     {
         width: 22%;
     }
+}
+
+select
+{
+    text-align-last: center;
+}
+
+option
+{
+    text-align-all:center;
 }

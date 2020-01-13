@@ -5,7 +5,7 @@
 @section('body')
   <div class="container">
     <form
-      action="/calculo" method="post" id="formFluencia">
+      action="/calculo#fluencia" method="post" id="formFluencia">
       @csrf
 
       {{-- Começo do parametro --}}
