@@ -14,7 +14,7 @@
         <div class="symbol border text-center pt-1">T</div>
         <div class="value border">
           <input
-            name="T" id="T" type="text" class="form-control {{!$errors->any() ? '' : ($errors->has('T') ? 'is-invalid' :'is-valid' )}}" value="{{old('T')}}">
+            name="T" id="T" type="number" class="form-control {{!$errors->any() ? '' : ($errors->has('T') ? 'is-invalid' :'is-valid' )}}" value="{{old('T')}}">
         </div>
         <div class="units border text-center pt-1">(ºC)</div>
         <div
@@ -35,7 +35,7 @@
         <div class="symbol border text-center pt-1">U</div>
         <div class="value border">
           <input
-            name="U" id="U" type="text" class="form-control {{!$errors->any() ? '' : ($errors->has('U') ? 'is-invalid' :'is-valid' )}}" value="{{old('U')}}">
+            name="U" id="U" type="number" class="form-control {{!$errors->any() ? '' : ($errors->has('U') ? 'is-invalid' :'is-valid' )}}" value="{{old('U')}}">
         </div>
         <div class="units border text-center pt-1">(%)</div>
         <div
@@ -56,7 +56,7 @@
         <div class="symbol border text-center pt-1">σc</div>
         <div class="value border">
           <input
-            name="sigmaC" id="sigmaC" type="text" class="form-control {{!$errors->any() ? '' : ($errors->has('sigmaC') ? 'is-invalid' :'is-valid' )}}" value="{{old('sigmaC')}}">
+            name="sigmaC" id="sigmaC" type="number" class="form-control {{!$errors->any() ? '' : ($errors->has('sigmaC') ? 'is-invalid' :'is-valid' )}}" value="{{old('sigmaC')}}">
         </div>
         <div class="units border text-center pt-1">(MPa)</div>
         <div
@@ -77,7 +77,7 @@
         <div class="symbol border text-center pt-1">t<sub>0</sub></div>
         <div class="value border">
           <input
-            name="t0" id="t0" type="text" class="form-control {{!$errors->any() ? '' : ($errors->has('t0') ? 'is-invalid' :'is-valid' )}}" value="{{old('t0')}}">
+            name="t0" id="t0" type="number" class="form-control {{!$errors->any() ? '' : ($errors->has('t0') ? 'is-invalid' :'is-valid' )}}" value="{{old('t0')}}">
         </div>
         <div class="units border text-center pt-1">(dias)</div>
         <div
@@ -98,7 +98,7 @@
         <div class="symbol border text-center pt-1">E<sub>ci</sub></div>
         <div class="value border">
           <input
-            name="eci" id="eci" type="text" class="form-control {{!$errors->any() ? '' : ($errors->has('eci') ? 'is-invalid' :'is-valid' )}}" value="{{old('eci')}}">
+            name="eci" id="eci" type="number" class="form-control {{!$errors->any() ? '' : ($errors->has('eci') ? 'is-invalid' :'is-valid' )}}" value="{{old('eci')}}">
         </div>
         <div class="units border text-center pt-1">(MPa)</div>
         <div
@@ -169,7 +169,7 @@
         <div class="symbol border text-center pt-1">f<sub>ct</sub></div>
         <div class="value border">
           <input
-            name="fct" id="fct" type="text" class="form-control {{!$errors->any() ? '' : ($errors->has('fct') ? 'is-invalid' :'is-valid' )}}" value="{{old('fct')}}">
+            name="fct" id="fct" type="number" class="form-control {{!$errors->any() ? '' : ($errors->has('fct') ? 'is-invalid' :'is-valid' )}}" value="{{old('fct')}}">
         </div>
         <div class="units border text-center pt-1">(MPa)</div>
         <div
@@ -190,7 +190,7 @@
         <div class="symbol border text-center pt-1">f<sub>ck</sub></div>
         <div class="value border">
           <input
-            name="fck" id="fck" type="text" class="form-control {{!$errors->any() ? '' : ($errors->has('fck') ? 'is-invalid' :'is-valid' )}}" value="{{old('fck')}}">
+            name="fck" id="fck" type="number" class="form-control {{!$errors->any() ? '' : ($errors->has('fck') ? 'is-invalid' :'is-valid' )}}" value="{{old('fck')}}">
         </div>
         <div class="units border text-center pt-1">(MPa)</div>
         <div
@@ -211,7 +211,7 @@
         <div class="symbol border text-center pt-1">a<sub>b</sub></div>
         <div class="value border">
           <input
-            name="ab" id="ab" type="text" class="form-control {{!$errors->any() ? '' : ($errors->has('ab') ? 'is-invalid' :'is-valid' )}}" value="{{old('ab')}}">
+            name="ab" id="ab" type="number" class="form-control {{!$errors->any() ? '' : ($errors->has('ab') ? 'is-invalid' :'is-valid' )}}" value="{{old('ab')}}">
         </div>
         <div class="units border text-center pt-1">(cm)</div>
         <div
@@ -232,7 +232,7 @@
         <div class="symbol border text-center pt-1">A<sub>c</sub></div>
         <div class="value border">
           <input
-            name="Ac" id="Ac" type="text" class="form-control {{!$errors->any() ? '' : ($errors->has('Ac') ? 'is-invalid' :'is-valid' )}}" value="{{old('Ac')}}">
+            name="Ac" id="Ac" type="number" class="form-control {{!$errors->any() ? '' : ($errors->has('Ac') ? 'is-invalid' :'is-valid' )}}" value="{{old('Ac')}}">
         </div>
         <div class="units border text-center pt-1">(cm²)</div>
         <div
@@ -253,7 +253,7 @@
         <div class="symbol border text-center pt-1">u<sub>ar</sub></div>
         <div class="value border">
           <input
-            name="uar" id="uar" type="text" class="form-control {{!$errors->any() ? '' : ($errors->has('uar') ? 'is-invalid' :'is-valid' )}}" value="{{old('uar')}}">
+            name="uar" id="uar" type="number" class="form-control {{!$errors->any() ? '' : ($errors->has('uar') ? 'is-invalid' :'is-valid' )}}" value="{{old('uar')}}">
         </div>
         <div class="units border text-center pt-1">(cm)</div>
         <div
@@ -274,7 +274,7 @@
         <div class="symbol border text-center pt-1">t</div>
         <div class="value border">
           <input
-            name="t" id="t" type="text" class="form-control {{!$errors->any() ? '' : ($errors->has('t') ? 'is-invalid' :'is-valid' )}}" value="{{old('t')}}">
+            name="t" id="t" type="number" class="form-control {{!$errors->any() ? '' : ($errors->has('t') ? 'is-invalid' :'is-valid' )}}" value="{{old('t')}}">
         </div>
         <div class="units border text-center pt-1">(dias)</div>
         <div
@@ -302,7 +302,7 @@
         <div class="symbol border text-center pt-1">ε<sub>cc</sub></div>
         <div class="value border">
           <input
-            name="fluencia" id="fluencia" type="text" class="form-control" readonly="true" value="{{ session('fluencia') }}">
+            name="fluencia" id="fluencia" type="number" class="form-control" readonly="true" value="{{ session('fluencia') }}">
         </div>
         <div class="units-results border text-center pt-1">(mm/mm)</div>
       </div>
