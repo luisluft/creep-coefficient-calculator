@@ -1,6 +1,6 @@
 .container
 {
-    padding-bottom: 0.5em;
+    padding-bottom: 0.5rem;
 }
 
 /*PDF sizing options start*/
@@ -20,9 +20,9 @@ object
 
 body
 {
-    font-size: 1em;
+    font-size: 1rem;
     font-family: "Nunito", sans-serif;
-    margin: 0.5em;
+    margin: 0.5rem;
 }
 
 /*About page text alignment start*/
@@ -41,15 +41,15 @@ p
 .btn-calcular
 {
     background-color: #36486b;
-    margin-bottom: 0.1em;
-    margin-top: 0.5em;
+    margin-bottom: 0.1rem;
+    margin-top: 0.5rem;
     color: #ffffff;
 }
 
 /* Sobre o autor*/
 .bg
 {
-    padding:0.3em;
+    padding:0.3rem;
     color: #ffffff;
     background-color: #343a40;
 }
@@ -64,45 +64,45 @@ input
 
 .title
 {
-    font-size: 1em;
+    font-size: 1rem;
     width: 100%;
     text-align: left;
 }
 
 .symbol
 {
-    font-size: 1em;
+    font-size: 1rem;
     width: 25%;
     text-align: right;
 }
 
 .value
 {
-    font-size: 1em;
+    font-size: 1rem;
     width: 35%;
 }
 
 .value-select
 {
-    font-size: 1em;
+    font-size: 1rem;
     width: 85%;
 }
 
 .units
 {
-    font-size: 1em;
+    font-size: 1rem;
     width: 25%;
 }
 
 .units-results
 {
-    font-size: 1em;
+    font-size: 1rem;
     width: 40%;
 }
 
 .info
 {
-    font-size: 1em;
+    font-size: 1rem;
     width: 15%;
 }
 
