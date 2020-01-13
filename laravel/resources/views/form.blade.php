@@ -234,7 +234,7 @@
           <input
             name="Ac" id="Ac" type="text" class="form-control {{!$errors->any() ? '' : ($errors->has('Ac') ? 'is-invalid' :'is-valid' )}}" value="{{old('Ac')}}">
         </div>
-        <div class="units border text-center pt-1">(cm)</div>
+        <div class="units border text-center pt-1">(cm²)</div>
         <div
           class="info border text-center">
           <a
@@ -297,25 +297,19 @@
     </form>
     {{-- Começo do resultado --}}
     @if (session('fluencia'))
-      <div class="input-group mb-0">
-        <div class="input-group-prepend">
-          <span
-            name="description" class="input-group-text">Deformação por fluência
-          </span>
-          <span
-            name="symbol" class="input-group-text">ε<sub>cc</sub>
-          </span>
+      <div class="input-group">
+        <div class="title border text-center bg-dark text-white pt-1">Deformação por fluência</div>
+        <div class="symbol border text-center pt-1">ε<sub>cc</sub></div>
+        <div class="value border">
+          <input
+            name="fluencia" id="fluencia" type="text" class="form-control" readonly="true" value="{{ session('fluencia') }}">
         </div>
-        <input
-          name="fluencia" id="fluencia" type="text" class="form-control" readonly="true" value="{{ session('fluencia') }}">
-        <div class="input-group-append">
-          <span
-            name="units" class="input-group-text">(mm/mm)
-          </span>
-        </div>
+        <div class="units-results border text-center pt-1">(mm/mm)</div>
       </div>
     @endif
     {{-- Fim do resultado --}}
+
+
   </div>
 
 

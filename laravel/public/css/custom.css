@@ -41,7 +41,7 @@ p
 .btn-calcular
 {
     background-color: #36486b;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.1em;
     margin-top: 0.5em;
     color: #ffffff;
 }
@@ -94,6 +94,12 @@ input
     width: 25%;
 }
 
+.units-results
+{
+    font-size: 1em;
+    width: 40%;
+}
+
 .info
 {
     font-size: 1em;
@@ -122,6 +128,10 @@ input
     {
         width:25%;
     }
+    .value-select
+    {
+        width: 85%;
+    }
     .units
     {
         width:15%;
@@ -129,5 +139,9 @@ input
     .info
     {
         width:7%;
+    }
+    .units-results
+    {
+        width: 22%;
     }
 }
