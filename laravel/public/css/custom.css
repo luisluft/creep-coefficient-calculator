@@ -1,6 +1,6 @@
 .container
 {
-    background-color: #F5F5F5;
+    padding-bottom: 0.5em;
 }
 
 /*PDF sizing options start*/
@@ -22,7 +22,7 @@ body
 {
     font-size: 1em;
     font-family: "Nunito", sans-serif;
-    margin: 8px;
+    margin: 0.5em;
 }
 
 /*About page text alignment start*/
@@ -41,22 +41,15 @@ p
 .btn-calcular
 {
     background-color: #36486b;
-    margin-bottom: 5px;
-    margin-top: 5px;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
     color: #ffffff;
-}
-
-.bg-3
-{
-    background-color: #474e5d;
-    color: #ffffff;
-    padding-top: 5px;
-    padding-bottom: 5px;
 }
 
 /* Sobre o autor*/
 .bg
 {
+    padding:0.3em;
     color: #ffffff;
     background-color: #343a40;
 }
@@ -87,6 +80,12 @@ input
 {
     font-size: 1em;
     width: 35%;
+}
+
+.value-select
+{
+    font-size: 1em;
+    width: 85%;
 }
 
 .units

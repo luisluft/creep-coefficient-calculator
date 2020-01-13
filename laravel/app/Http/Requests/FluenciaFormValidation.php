@@ -32,11 +32,11 @@ class FluenciaFormValidation extends FormRequest
             'ag'     => 'required_without:Eci',
             'CP'     => 'required',
             'fck'    => 'required|numeric|min:20|max:90',
-            'fct'    => 'required_without:eci|sometimes|nullable|numeric',
+            'fct'    => 'required_without:eci|sometimes|nullable|numeric|min:0',
             'ab'     => 'required|numeric|min:0|max:15',
             'Ac'     => 'required|numeric|min:0',
             'uar'    => 'required|numeric|min:0',
-            'eci'    => 'required_without:fct,ag|sometimes|nullable|numeric',
+            'eci'    => 'required_without:fct,ag|sometimes|nullable|numeric|min:0',
         ];
     }
 
