@@ -11,34 +11,16 @@
 |
 */
 
-Route::get(
-    '/calculo',
-    'ControllerFluencia@formulario'
-);
+Route::get('/calculo', 'ControllerFluencia@formulario')->name('creep.calculus');
 
-Route::get(
-    '/',
-    'ControllerFluencia@formulario'
-);
+Route::get('/', 'ControllerFluencia@formulario');
 
-Route::get(
-    '/teoria',
-    'ControllerFluencia@teoria'
-);
+Route::get('/teoria', 'ControllerFluencia@teoria')->name('creep.theory');
 
-Route::get(
-    '/exemplo',
-    'ControllerFluencia@exemplo'
-);
+Route::get('/exemplo', 'ControllerFluencia@exemplo')->name('creep.example');
 
-Route::get(
-    '/sobre',
-    'ControllerFluencia@sobre'
-);
+Route::get('/sobre', 'ControllerFluencia@sobre')->name('creep.about');
 
-Route::post(
-    '/calculo',
-    'ControllerFluencia@calculo'
-);
+Route::post('/calculo', 'ControllerFluencia@calculo');
 
 
