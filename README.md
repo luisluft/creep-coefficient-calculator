@@ -1,4 +1,4 @@
-# www.nbrsimplificada.com.br
+# nbrsimplificada.com.br
 
 É um site criado para calcular a fluência do concreto de maneira rápida e intuitiva.
 
@@ -13,4 +13,4 @@ Requests de pull são bem vindos.
 Bacharel em engenharia civil pela UFMS e programador de coração.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[GPL-3.0](https://choosealicense.com/licenses/gpl-3.0/)
