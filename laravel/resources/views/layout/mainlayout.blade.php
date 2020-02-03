@@ -6,6 +6,7 @@
     <link
       rel="stylesheet"
       href="{{ asset('css/custom.css')}}">
+      <link rel="icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
     <title>@yield('title')</title>
     <meta charset="UTF-8">
     <meta
