@@ -1,4 +1,4 @@
-# nbrsimplificada.com.br
+# https://fluencia.tecluft.com.br/
 
 É um site criado para calcular a fluência do concreto de maneira rápida e intuitiva.
 
